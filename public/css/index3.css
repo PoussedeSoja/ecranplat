@@ -1,0 +1,210 @@
+#row{
+    background-color: #222;
+}
+#logosite{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#titresite{
+    margin-top: 50px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: chalkduster;
+}
+#hrtitre{
+    background-color: whitesmoke;
+    width: 210px;
+}
+#soustitresite{
+    text-align: center;
+    color: #e95912;
+    font-family: chalkduster;
+}
+#navbar1 :hover{
+    color: #e95912;
+}
+.navbar-brand{
+    color: whitesmoke;
+}
+.navbar-brand #prenomconnexion :hover{
+    color: #e95912;
+}
+#logologin{
+    color: whitesmoke;
+    margin-left: 20px;
+}
+#logosearch{
+    color: whitesmoke;
+    margin-left: 20px;
+}
+#navbar2 .navbar-brand{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 45px;
+    margin-right: 45px;
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+#navbar2 .navbar-brand #accueil{
+    margin-left: 40px;
+}
+#navbar2 :hover{
+    color: #e95912;
+}
+#navaccueil{
+    margin-left: 2%;
+}
+#navfilm{
+    margin-left: 10.5%;
+}
+#navserie{
+    margin-left: 10.5%;
+}
+#navgame{
+    margin-left: 10.5%;
+}
+#navmangas{
+    margin-left: 10.5%;
+}
+#navbd{
+    margin-left: 10.5%;
+}
+#hr2{
+    margin-top: 0px;
+    width: 104.4%;
+    margin-left: -30px;
+    text-align: center;
+    background-color: #e95912;
+    height: 4px;
+}
+/*********Fin header*******/
+
+
+#containerprofil1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 4px;
+}
+#row1{
+    background-color: #222;
+    opacity: -100px;
+
+}
+#photoprofil{
+    width: 200px;
+    margin-left: -15px;
+}
+#login{
+    margin-top: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    color: whitesmoke;
+}
+#login1{
+    margin-top: 30px;
+}
+#row2{
+    background-color: #efeeee;
+}
+#informations{
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+#titredetail, .titledetail{
+    font-weight: bold;
+}
+#titredetail{
+    color: #e95912;
+}
+#modifier{
+    margin-bottom: 10px;
+    background-color: #e95912;
+    border: none;
+}
+#supprimer{
+    margin-bottom: 10px;
+    float: right;
+    background-color: #db5452;
+    border: none;
+}
+#checkout-button22{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#checkout-button23{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#titredetail2{
+    color: #e95912;
+    text-align: center;
+}
+.checkout-button24{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.checkout-button25{
+    border-radius: 5px;
+    background: #222;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.test{
+    font-weight: bold;
+}
+#message{
+    color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profil{% endblock %}
+
+{% block body %}
+<div class="container" id="containerprofil1">
+    <div class="row" id="row1">
+    </div>
+    <div class="row" id="row2">
+        <div class="col-md-6" id="informations">
+            <section>
+                <h1 id="titredetail2">Modification du profil</h1>
+                <hr>
+                {{ form_start(editform) }}
+                <div class="test">
+                {{ form_row(editform.nom, {
+                        label: 'Nom :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 62px' }
+                    }) }} </div> <br>
+                <div class="test">
+                {{ form_row(editform.prenom, {
+                        label: 'Prenom :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 40px'}
+                    }) }} </div> <br>
+                <div class="test">
+                {{ form_row(editform.adresse, {
+                        label: 'Adresse :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 38px'}
+                    }) }} </div> <br>
+                <div class="test">
+                {{ form_row(editform.codePostal, {
+                        label: 'Code postal :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 12px'}
+                    }) }} </div> <br>
+                <div class="test">
+                {{ form_row(editform.ville, {
+                        label: 'Ville :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 65px'}
+                    }) }} </div> <br>
+                <div class="test">
+                {{ form_row(editform.pays, {
+                        label: 'Pays :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 60px'}
+                    }) }} </div> <br>
+                <div class="test">
+                {{ form_row(editform.image, {
+                        label: 'Photo profil :',
+                        'attr': {'class': 'box-input', 'style': 'margin-left: 12px'}
+                    }) }} </div> <br>
+                <button type="submit" class="checkout-button24" id="boutoninscription">Modifier le profil</button>
+                {{ form_end(editform) }} <br>
+            </section>
+        </div>
+        <div class="col-md-6" id="informations2">
+            <section>
+                 <a href="{{ path('profil') }}"><button class="checkout-button25" id="boutoninscription">Retour</button></a>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

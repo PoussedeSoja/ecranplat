@@ -1,0 +1,939 @@
+/* Pour pouvoir utiliser une hauteur (height) ou une hauteur minimale
+   (min-height) sur un bloc, il faut que son parent direct ait lui-même une
+   hauteur déterminée (donc toute valeur de height sauf "auto": hauteur en
+   pixels, em, autres unités...).
+   Si la hauteur du parent est en pourcentage, elle se réfère alors à la
+   hauteur du «grand-père», et ainsi de suite.
+   Pour pouvoir utiliser un "min-height: 100%" sur div#global, il nous faut:
+   - un parent (body) en "height: 100%";
+   - le parent de body également en "height: 100%". */
+html, body {
+    height: 100%;
+}
+
+body {
+    color: #bfbfbf;
+    background-color: black;
+    /*background: black;*/
+    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+.titreBillet {
+    margin-bottom : 0px;
+}
+
+#global {
+    min-height: 100%;  /* Voir commentaire sur html et body plus haut */
+    /*background: #333534;*/
+    background: black;
+    width: 97%;
+    margin: auto;	/* Permet de centrer la div */
+    text-align: justify;
+    padding: 5px 20px;
+}
+
+#contenu {
+    margin-bottom : 30px;
+}
+
+#titreBlog, #piedBlog {
+    text-align: center;
+}
+
+#titreReponses {
+    font-size : 100%;
+}
+
+#txtCommentaire {
+    width: 50%;
+}
+/****Début header*****/
+
+#row1{
+    background-color: #222;
+}
+#logosite{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#titresite{
+    margin-top: 50px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: chalkduster;
+}
+#hrtitre{
+    background-color: whitesmoke;
+    width: 210px;
+}
+#soustitresite{
+    text-align: center;
+    color: #e95912;
+    font-family: chalkduster;
+}
+#logoabonne{
+    width: 22%;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+#navbar1 :hover{
+    color: #e95912;
+}
+.navbar-brand{
+    color: whitesmoke;
+}
+.navbar-brand #prenomconnexion :hover{
+    color: #e95912;
+}
+#imageprofil{
+    width: 20%;
+    margin-left: 10px;
+}
+#logologin{
+    color: whitesmoke;
+    margin-left: 5px;
+}
+#logosearch{
+    color: whitesmoke;
+    margin-left: 20px;
+}
+#navbar2 .navbar-brand{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-right: 45px;
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+#navbar2 .navbar-brand #accueil{
+    margin-left: 0px;
+}
+#navbar2 :hover{
+    color: #e95912;
+}
+#navaccueil{
+    margin-right: -8%;
+    float: left;
+}
+#dropdownfilms{
+    margin-top: 10px;
+    margin-right: 9.55%;
+    border-radius: 0px;
+}
+#col2dropdownfilm{
+    background-color: #ec540c;
+    height:20%;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-bottom: 150px;
+    font-weight: bold;
+}
+#newsfilms, #dossierfilms, #critiquefilms{
+    color: whitesmoke;
+    font-weight: bold;
+    margin-left: -20px;
+}
+#col3dropdownfilm{
+    margin-top: -246px;
+    margin-left: 200px;
+}
+#imagearticle33{
+    width: 160px;
+    height: 150px;
+}
+#titrefilmdropdown{
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 0.8em;
+    width: 80%;
+    margin-top: 5px;
+}
+#navfilm{
+    margin-left: 0%;
+}
+#logofilm{
+    color: whitesmoke;
+    float: right;
+    margin-top: -20px;
+    margin-right: 25px;
+}
+#navserie{
+    margin-right: 0%;
+}
+#dropdownseries{
+    margin-top: 10px;
+    margin-right: 9.55%;
+    border-radius: 0px;
+}
+#col2dropdownseries{
+    background-color: #ec540c;
+    height:20%;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-bottom: 150px;
+    font-weight: bold;
+}
+#logoserie{
+    color: whitesmoke;
+    float: right;
+    margin-top: -20px;
+    margin-right: 25px;
+}
+#navgame{
+    margin-right: 0%;
+}
+#logojeux{
+    color: whitesmoke;
+    float: right;
+    margin-top: -20px;
+    margin-right: 25px;
+}
+#navmangas{
+    margin-right: 0%;
+}
+#logomanga{
+    color: whitesmoke;
+    float: right;
+    margin-top: -20px;
+    margin-right: 25px;
+}
+#navbd{
+    margin-left: 0%;
+}
+#logobd{
+    color: whitesmoke;
+    float: right;
+    margin-top: -20px;
+    margin-right: 25px;
+}
+#hr2{
+    margin-top: 0px;
+    width: 104.4%;
+    margin-left: -30px;
+    text-align: center;
+    background-color: #e95912;
+    height: 4px;
+}
+/*********Fin header*******/
+
+/********Début Register*****/
+
+.box {
+    border: 1px solid #c4c4c4;
+    padding: 30px 25px 10px 25px;
+    background: white;
+    margin: 30px auto;
+    width: 390px;
+  }
+#titreconnexion{
+    color: black;
+}
+.box-input {
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+    padding-left:10px;
+    border-radius: 5px;
+    width: 347px;
+    height: 50px;
+}
+.box-button {
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    cursor: pointer;
+    font-size: 19px;
+    width: 100%;
+    height: 51px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+}
+.box-register{
+    text-align: center;
+}
+/********Début Content*****/
+
+.container{
+    margin-top: 20px;
+    background-color: #f3f3f1;
+}
+
+#hrarticle{
+    height: 2px;
+    background-color: black;
+    margin-left: -15px;
+}
+.titrearticle{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7em;
+    color: #e95912;
+}
+.titreredac{
+    color: #e95912;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: -20px;
+    float: left;
+}
+#imagearticle{
+    margin-top: 30px;
+    margin-left: 200px;
+}
+.entete{
+    font-weight: bold;
+    margin-top: 10px;
+}
+#bienvenue{
+    margin-top: 30px;
+    margin-left: 0px;
+    font-size: 0.8em;
+}
+#imagearticle4{
+    margin-top: 20px;
+    width: 66%;
+    margin-left: -0px;
+}
+#titrephotoentete{
+    border: 1px solid black;
+    background-color: black;
+    opacity: 0.8;
+    width: 670px;
+    height: 50px;
+    margin-top: -50px;
+    margin-left: 0px;
+}
+#titre0{
+    margin-left: 5px;
+    width: 59%;
+    color: #e95912;
+    text-decoration: none;
+    position: absolute;
+}
+#ajd{
+    margin-top: 40px;
+    font-size: 1.3em;
+}
+
+#today{
+    color: #e95912;
+    font-weight: bold;
+}
+#hrajd{
+    margin-top: -10px;
+    margin-left: 0px;
+    margin-bottom: -10px;
+    background-color: black;
+    width: 80%;
+    height: 2px;
+}
+#imagearticle1{
+    margin-top: 20px;
+    width: 300px;
+    float: right;
+}
+#imagearticle11{
+    margin-top: -147px;
+    width: 300px;
+    float: right;
+}
+#imagearticle3{
+    width: 300px;
+    height: 160px;
+}
+#titre{
+    color: #e95912;
+    text-decoration: none;
+    position: relative;
+    margin-top: 20px;
+    
+}
+.titrearticle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7em;
+    color: #e95912;
+}
+.titrearticle :hover{
+    color: #e95912;
+}
+#resume{
+    margin-top: 10px;
+}
+#libelle1{
+    color: #e95912;
+    margin-top: 10px;
+    float: left;
+    font-weight: bold;
+}
+#libelle2{
+    float: left;
+    color: #e95912;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-weight: bold;
+
+}
+#datearticlecontent{
+    font-size: 0.7em;
+    float: left;
+    margin-top: 14px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 0px solid grey;
+    color: #adadad;
+    background-color: #ececec;
+}
+#souscategorie{
+    margin-right: 10px;
+}
+#hrresume{
+    margin-left: 0px;
+    width: 80%;
+}
+#sidebar{
+    float: right;
+}
+#last{
+    float: right;
+    margin-top: -40px;
+    margin-right: 100px;
+}
+#lastnews{
+    color: #e95912;
+    font-weight: bold;
+}
+/********Début Content article*****/
+
+.container{
+    margin-top: 20px;
+    background-color: #f3f3f1;
+}
+
+#hrarticle{
+    height: 2px;
+    background-color: black;
+    margin-left: -15px;
+}
+#auteurarticle{
+    color: #e95912;
+    font-weight: bold;
+}
+#datecomment{
+    border: none;
+    background-color: lightgray;
+    width: 13%;
+}
+#datecomment2{
+    font-size: 0.8em;
+    margin-top: -10px;
+    color: darkgray;
+    text-align: center;
+}
+.titrearticle{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7em;
+    color: #e95912;
+}
+.titreredac{
+    color: #e95912;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: -20px;
+    float: left;
+}
+#imagearticle{
+    margin-top: 30px;
+    margin-left: 200px;
+}
+.entete{
+    font-weight: bold;
+    margin-top: 10px;
+}
+#hrcommentaire{
+    height: 2px;
+    background-color: black;
+    margin-left: -15px;
+}
+#titreReponses{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#sectioncomment{
+    border: 1px solid black;
+    height: 300px;
+    background-color: #1c1c1c;
+}
+#votre{
+    margin-left: 32%;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#comment{
+    color: #e95912;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#logosite3{
+    margin-left: 10px;
+    width: 20px;
+}
+#auteur{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#txtCommentaire{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+#envoyercom{
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    background-color: #e95912;
+    color: whitesmoke;
+    border: none;
+}
+/******Début pages categories et souscategories*****/
+#bienvenue1{
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #e95912;
+    margin-bottom: 50px;
+}
+#actufilms{
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #e95912;
+}
+#lastnewsfilms{
+    font-size: 0.7em;
+}
+
+#titreajd1{
+    margin-top: 50px;
+}
+
+#today1{
+    color: #e95912;
+    font-weight: bold;
+    font-size: 1.7em;
+}
+#hrajd{
+    margin-top: -10px;
+    margin-left: 0px;
+    margin-bottom: -10px;
+    background-color: black;
+    width: 80%;
+    height: 2px;
+}
+/******Début page abonnement*****/
+
+#titrepageabonnement{
+    text-align: center;
+    font-size: 3em;
+    color:#555353;
+}
+#logoabonnement{
+    width: 3%;
+}
+#boldtitreabonnement{
+    font-weight: bold;
+}
+#pkabonne{
+    text-align: center;
+    color: #e95912;
+    font-weight: bold;
+    font-size: 2em;
+}
+#listepkabonne{
+    text-align: center;
+}
+.listeokabonne1{
+    font-weight: bold;
+}
+.listeokabonne2{
+    font-weight: bold;
+    margin-left: -36px;
+}
+.listeokabonne3{
+    font-weight: bold;
+    margin-left: -110px;
+}
+.listeokabonne4{
+    font-weight: bold;
+    margin-left: -16px;
+}
+#premierabonnement{
+    border: 1px solid black;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+#ab6mois{
+    text-align: center;
+    margin-left: 280px;
+    font-weight: bold;
+    color: whitesmoke;
+    position: absolute;
+}
+#hrab6mois{
+    width: 104.2%;
+    height: 22px;
+    background-color: #222;
+    margin-top: 0px;
+    margin-left: -15px;
+}
+#ab6mois2{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #e95912;
+    text-align: center;
+}
+#soutenez1{
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: -10px;
+}
+#checkout-button{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 19px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 40px;
+    margin-left: 30%;
+}
+#checkout-button1{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 19px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 40px;
+    margin-left: 30%;
+}
+#checkout-button2{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 19px;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 40px;
+    margin-left: 30%;
+}
+#checkout-button4, #checkout-button5, #checkout-button6{
+    border-radius: 5px;
+    background: #e95912;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    width: 70%;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+    margin-top: 40px;
+    margin-left: 30%;
+}
+#testcol{
+    float: left;
+}
+#testcol2{
+    float: left;
+}
+/******Début page success*****/
+#abosuccess{
+    color: #e95912;
+    font-weight: bold;
+}
+
+/*****Début page error****/
+#aboerror{
+    color: #e95912;
+    font-weight: bold;
+}
+/*******Début footer******/
+
+#footer{
+    background-color: #222;
+    margin-top: 10px;
+}
+#logosite2{
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 30px;
+}
+#ecran{
+    margin-top: 20px;
+    margin-left: 10px;
+    color: whitesmoke;
+    float: left;
+    font-size: 1.2em;
+}
+#plat{
+    margin-top: 20px;
+    color: whitesmoke;
+    float: left;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#navbar3 .navbar-brand{
+    font-size: 0.8em;
+    font-weight: bold;
+    float: left;
+    margin-top: 10px;
+}
+#facebook{
+    float: right;
+    margin-top: 25px;
+    color: whitesmoke;
+}
+#twitter{
+    float: right;
+    margin-top: 25px;
+    color: whitesmoke;
+}
+#youtube{
+    float: right;
+    margin-top: 25px;
+    color: whitesmoke;
+}
+#social a :hover{
+    color: #e95912;
+}
+#navbar4 .navbar-brand{
+    font-size: 0.8em;
+    font-weight: bold;
+    float: left;
+    margin-top: 10px;
+    margin-left: 110px;
+}
+#copy{
+    margin-top: 20px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 0.7em;
+}
+/*************************************************/
+/***********MEDIA QUERIES************************/
+/************************************************/
+
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px*/
+@media screen and (max-width: 1280px){
+    /*****Début Header*****/
+    #village2{
+        height: 200px;
+    }
+    .dropdown-content{
+        margin-left: -50px;
+    }
+    /*****Fin Header*****/
+
+    /*****Début Content*****/
+    #pub2{
+        height: 550px;
+    }
+    #guitarevente, #saxovente, #pianovente{
+        height: 270px;
+    }
+    #partenaires2{
+        height: 270px;
+    }
+    #test8{
+        height: 148px;
+    }
+    /*****Fin Content*****/
+
+    /*****Début footer*****/
+    #navbar3 .navbar-brand{
+        font-size: 0.7em;
+    }
+    #facebook{
+        width: 10px;
+        margin-top: -15px;
+        margin-left: 20px;
+        padding-left: 10px;
+    }
+    #twitter{
+        width: 10px;
+        float: left;
+    }
+    #youtube{
+        width: 10px;
+        float: left;
+    }
+    #navbar4 .navbar-brand{
+        margin-left: 25px;
+        font-size: 0.8em;
+    }
+}
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 871px*/
+@media screen and (max-width: 871px){
+    /*****Début Header*****/
+    #logologin{
+        margin-left: 5px;
+    }
+    #prenomconnexion{
+        margin-left: -30px;
+    }
+    #dropdowncompte{
+        margin-left: -80px;
+    }
+    #hr2{
+        width: 108.5%;
+    }
+    /*****Début content accueil*****/
+    #titrephotoentete{
+        width: 65%;
+    }
+    #imagearticle3{
+        width: 80%;
+        margin-left: 70px;
+    }
+    /****Début content article****/
+    #imagearticle{
+        margin-left: 0px;
+    }
+    #votre{
+        font-size: 1em;
+        margin-left: 55px;
+    }
+    #comment{
+        font-size: 1em;
+    }
+    #logosite3{
+        width: 20px;
+    }
+    /****Début footer****/
+
+
+}
+
+/* Sur les écrans, quand la largeur de la fenêtre est comprise entre 280 et 640px*/
+@media all and (min-width: 280px) and (max-width: 640px){
+    /******Début header******/
+    #soustitresite{
+        font-size: 0.9em;
+    }
+    #prenomconnexion{
+        float: left;
+    }
+    #hr2{
+        width: 127.4%;
+    }
+    /****Content accueil****/
+    #bienvenue{
+        display: none;
+    }
+    #imagearticle4{
+        width: 100%;
+        height: 105%;
+        margin-left: 0px;
+    }
+    #titrephotoentete{
+        width: 100%;
+        height: 20%;
+        margin-top: -20px;
+        margin-left: 0px;
+    }
+    #titre0{
+        font-size: 0.5em;
+    }
+    #imagearticle3{
+        margin-left: 55px;
+    }
+    /****Content article****/
+    .container{
+        margin-bottom: 20px;
+    }
+    .titrearticle{
+        font-size: 1.2em;
+    }
+    #imagearticle{
+        margin-left: 0px;
+    }
+    #auteurarticle{
+        font-size: 0.7em;
+    }
+    #datecomment2{
+        display: none;
+        font-size: 0.5em;
+        width: 20%;
+    }
+    #contenuarticle{
+        margin-left: -40px;
+        float: left;
+        font-size: 0.7em;
+    }
+    #votre{
+        font-size: 0.9em;
+        margin-left: 0px;
+    }
+    #comment{
+        font-size: 0.9em;
+    }
+    #logosite3{
+        width: 12px;
+    }
+    #envoyercom{
+        font-size: 0.7em;
+    }
+
+    /****Début footer****/
+   #youtube, #facebook, #twitter{
+       float: left;
+       margin-left: 30px;
+   }
+   #facebook{
+       margin-top: 25px;
+   }
+   #navbar4 .navbar-brand{
+       float: left;
+       margin-left: 0px;
+       font-size: 0.5em;
+   }
+}
+/*************************************************/
+/***********FIN MEDIA QUERIES************************/
+/************************************************/

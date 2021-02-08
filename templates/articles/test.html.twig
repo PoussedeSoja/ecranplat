@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement/ Abonnement{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="titrepageabonnement">Abonnement <img id="logoabonnement" src="{{asset('image/logositeabonne.png')}}"> Ecran<span id="boldtitreabonnement">Plat</span></p>
+    </div>
+    <div class="col-md-12" id="listepkabonne">
+      <p id="pkabonne">Pourquoi s'abonner ?</p>
+      <li class="listeokabonne1">Soutien d'un média libre et exigeant</li>
+      <li class="listeokabonne2">Accès à des contenus exclusifs</li>
+      <li class="listeokabonne3">Confort de navigation</li>
+      <li class="listeokabonne4">Une place à part dans notre coeur</li>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8" id="premierabonnement">
+      <p id="ab6mois">ABONNEMENT 6 MOIS</p>
+      <hr id="hrab6mois">
+      <div class="col-md-12">
+        <div class="col-md-6" id="testcol">
+          <p id="ab6mois2">20€ pour 6 mois</p>
+          <p id="soutenez1">Soutenez EcranPlat en vous abonnant pendant 6 mois</p>
+        </div>
+        <div class="col-md-6" id="testcol2">
+          <button id="checkout-button">C'est parti !</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8" id="premierabonnement">
+      <p id="ab6mois">ABONNEMENT 1 AN</p>
+      <hr id="hrab6mois">
+      <div class="col-md-12">
+        <div class="col-md-6" id="testcol">
+          <p id="ab6mois2">35€ pour un an</p>
+          <p id="soutenez1">Soutenez EcranPlat en vous abonnant pendant 1 an</p>
+        </div>
+        <div class="col-md-6" id="testcol2">
+          <button id="checkout-button1">C'est parti !</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8" id="premierabonnement">
+      <p id="ab6mois">ABONNEMENT 2 ANS</p>
+      <hr id="hrab6mois">
+      <div class="col-md-12">
+        <div class="col-md-6" id="testcol">
+          <p id="ab6mois2">50€ pour deux ans</p>
+          <p id="soutenez1">Soutenez EcranPlat en vous abonnant pendant 2 ans</p>
+        </div>
+        <div class="col-md-6" id="testcol2">
+          <button id="checkout-button2">C'est parti !</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+    
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+      // Create an instance of the Stripe object with your publishable API key
+      var stripe = Stripe('pk_test_51HwT4JLo5hExdMh4eS58tJ94lsxSV43NjB35JA6nBejtiZCdE5jFY9FhdlTos5iq8STEycsRxeunCc3zEqO0rVgb009WA92Aqt');
+      var checkoutButton = document.getElementById('checkout-button');
+      var checkoutButton1 = document.getElementById('checkout-button1');
+      var checkoutButton2 = document.getElementById('checkout-button2');
+
+      checkoutButton.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session', {
+          method: 'POST',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+
+      checkoutButton1.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session1', {
+          method: 'POST',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session1) {
+          return stripe.redirectToCheckout({ sessionId: session1.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+
+      checkoutButton2.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session2', {
+          method: 'POST',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session2) {
+          return stripe.redirectToCheckout({ sessionId: session2.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+    </script>
+
+{% endblock %}

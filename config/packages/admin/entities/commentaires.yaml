@@ -1,0 +1,11 @@
+easy_admin:
+
+    entities:
+        Commentaires:
+            class: App\Entity\Commentaires
+            label: 'Commentaires'
+            icon: 'comments-o'
+            list:
+                item_permission: [ROLE_SUPER_ADMIN, ROLE_EDITOR]
+                title: "Most Recent Comments"
+                max_results: 15

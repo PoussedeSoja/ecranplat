@@ -1,0 +1,30 @@
+easy_admin:
+
+    entities:
+        Users:
+            class: App\Entity\Users
+            label: 'Users'
+
+            list:
+                item_permission: [ROLE_SUPER_ADMIN]
+                title: "Last Users"
+                max_results: 15
+                fields:
+                    - id
+                    - nom
+                    - prenom
+                    - pseudo
+                    - {property: 'roles', label: 'Rôles', type: json_array}
+                    - adresse
+                    - codepostal
+                    - ville
+                    - pays
+                    - {property: 'image', type: 'image', base_path: '/image'}
+            
+            edit:
+                fields:
+                    - { property: 'roles', label: 'Rôles',
+                            type: choice,
+                            type_options: {expanded: true, multiple: true,
+                            choices: {'Utilisateur':'ROLE_USER', 'Editeur':'ROLE_EDITOR', 'Admin':'ROLE_ADMIN'}}}
+        

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+
+{% block body %}
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ path('accueil') }}"><span id="bienvenue1">EcranPlat/</span></a> <a href="{{ path('mangas') }}"><span id="actufilms">Actualités Mangas/</span></a> <span id="lastnewsfilms">Dernières news Mangas</span>
+        </div>
+    <tbody>
+        <div class="col-md-4" id="titreajd1">
+            <span id="today1">Mangas : Actualité</span></p>
+        </div>
+        <div class="col-md-10">
+            <hr id="hrajd">
+        </div>     
+    
+ 
+    {% for article in articles1 %}
+                {% if app.user %}
+                <div class="col-md-4">
+                
+                    <a href="{{ path('lire', {'id': article.id }) }}"> <h4 id="titre"><td>{{ article.titre }}</td></h4></a>
+                    <div id="resume"><td>{{ article.resume }}</td></div>
+                    <div id="libelle1">{{ article.souscategorie }} - </div> <div id="libelle2">{{ article.categorie }}</div>
+                    <div id="datearticlecontent">{{article.date | date('d/m/y')}}</div>
+                </div>
+                <div class="col-md-4">
+                    <div id="imagearticle1"><td id="imagearticle2"><img class="img-fluid" id="imagearticle3" src="{{ asset('image/' ~article.image) }}"></td></div>
+                </div>
+                <div class="col-md-10">
+                    <hr id="hrresume">
+                </div>
+                {% else %}
+                <div class="col-md-4">
+                    <div id="resume">{{ article.resume }}</div>
+                    <a href="{{ path('app_login') }}" class="btn btn-primary" id="voir">Connectez-vous pour lire la suite</a>
+                </div>
+                <div class="col-md-4">
+                    <div id="imagearticle1"><td id="imagearticle2"><img class="img-fluid" id="imagearticle3" src="{{ asset('image/' ~article.image) }}"></td></div>
+                </div>
+                <div class="col-md-10">
+                    <hr id="hrresume">
+                </div>
+                {% endif %}
+                    
+    
+  {% endfor %}
+        </tbody>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+
+{% block body %}
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <span id="bienvenue">Bienvenue sur EcranPlat, le média de l'actualité cinéma, films, séries, jeux vidéo, mangas, comics, bandes-dessinées</span>
+        </div>
+    {% for article in articles %}
+        <div class="col-md-12">
+            <div id="imagearticle6"><td id="imagearticle5"><img class="img-fluid" id="imagearticle4" src="{{ asset('image/' ~article.image) }}"></td></div>
+            {% if app.user %}
+            <div id="titrephotoentete"><a href="{{ path('lire', {'id': article.id }) }}"><h5 id="titre0"><td>{{ article.titre }}</td></h5></a></div>
+            {% endif %}
+        </div>
+    <tbody>
+        <div class="col-md-3" id="titreajd">
+            <p id="ajd">Aujourd'<span id="today">hui</span></p>
+        </div>
+        <div class="col-md-10">
+            <hr id="hrajd">
+        </div>     
+    
+  {% endfor %}
+  {% for article in articles1 %}
+                {% if app.user %}
+                <div class="col-md-4">
+                
+                    <a href="{{ path('lire', {'id': article.id }) }}"> <h4 id="titre"><td>{{ article.titre }}</td></h4></a>
+                    <div id="resume"><td>{{ article.resume }}</td></div>
+                    <div id="libelle1">{{ article.categorie }} - </div> <div id="libelle2">{{ article.souscategorie }}</div>
+                    <div id="datearticlecontent">{{article.date | date('d/m/y')}}</div>
+                </div>
+                <div class="col-md-4">
+                    <div id="imagearticle1"><td id="imagearticle2"><img class="img-fluid" id="imagearticle3" src="{{ asset('image/' ~article.image) }}"></td></div>
+                </div>
+                <div class="col-md-10">
+                    <hr id="hrresume">
+                </div>
+                {% else %}
+                <div class="col-md-4">
+                    <div id="resume">{{ article.resume }}</div>
+                    <a href="{{ path('app_login') }}" class="btn btn-primary" id="voir">Connectez-vous pour lire la suite</a>
+                </div>
+                <div class="col-md-4">
+                    <div id="imagearticle1"><td id="imagearticle2"><img class="img-fluid" id="imagearticle3" src="{{ asset('image/' ~article.image) }}"></td></div>
+                </div>
+                <div class="col-md-10">
+                    <hr id="hrresume">
+                </div>
+                {% endif %}
+                    
+    
+  {% endfor %}
+        </tbody>
+
+    </div>
+  </div>
+{% endblock %}

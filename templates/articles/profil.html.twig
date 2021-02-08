@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil utilisateur{% endblock %}
+
+{% block body %}
+<div class="container" id="containerprofil1">
+    <div class="row" id="row1">
+        <div class="col-md-3">
+            <img class="img-fluid" id="photoprofil" src="{{ asset('image/' ~app.user.image) }}">
+        </div>
+        <div class="col-md-9" id="login1">
+            <span id="login">{{ app.user.pseudo }}</span>
+        </div>
+    </div>
+    <div class="row" id="row2">
+        <div class="col-md-6" id="informations">
+            <section>
+                <h1 id="titredetail">Infos</h1>
+                {% for message in app.flashes('message') %} 
+                    <span id="message">{{message}}</span>
+                {% endfor %}
+                <hr>
+                <p><span class="titledetail">Nom : </span>{{ app.user.nom }}</p>
+                <hr>
+                <p><span class="titledetail">Prenom : </span>{{ app.user.prenom }}</p>
+                <hr>
+                <p><span class="titledetail">Adresse : </span>{{ app.user.adresse }}</p>
+                <hr>
+                <p><span class="titledetail">Code postal : </span>{{ app.user.codepostal }}</p>
+                <hr>
+                <p><span class="titledetail">Ville : </span>{{ app.user.ville }}</p>
+                <hr>
+                <p><span class="titledetail">Pays : </span>{{ app.user.pays }}</p>
+                <hr>
+                <a href="{{ path('editprofil') }}"><button id="checkout-button22">Modifier le profil</button></a>
+                <a href="{{ path('editpass') }}"><button id="checkout-button23">Modifier le mot de passe</button></a>
+            </section>
+        </div>
+        <div class="col-md-6" id="informations2">
+            <section>
+                
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

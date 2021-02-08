@@ -1,0 +1,12 @@
+easy_admin:
+    list:
+        actions:
+            - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary'}
+            - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+
+    design:
+      menu:
+      - { route: 'accueil', label: 'Retourner sur le site', icon: 'home'}
+      - { entity: 'Articles', label: 'Articles', icon: 'newspaper'}
+      - { entity: 'Commentaires', label: 'Commentaires', icon: 'comment-dots'}
+      - { entity: 'Users', label: 'Users', icon: 'user'}

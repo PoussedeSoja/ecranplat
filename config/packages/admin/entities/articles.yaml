@@ -1,0 +1,22 @@
+easy_admin:
+
+    entities:
+        Articles:
+              class: App\Entity\Articles
+              label: 'Articles'
+              icon: 'newspaper'
+              list:
+                  item_permission: [ROLE_ADMIN, ROLE_EDITOR]
+                  title: "Most recent Post"
+                  max_results: 15
+                  fields:
+                      - id
+                      - titre
+                      - resume
+                      - categorie
+                      - souscategorie
+                      - {property: 'date', type: 'date', format: 'd-m-yy' }
+                      - auteur
+                      - contenu
+                      - {property: 'image', type: 'image', base_path: '/image' }
+                      - section

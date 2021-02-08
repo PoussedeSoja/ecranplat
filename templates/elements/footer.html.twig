@@ -1,0 +1,47 @@
+{% block body %}
+<footer id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="#row1"><img src="{{asset('image/logosite2.png')}}" class="img-fluid" alt="" id="logosite2"><p id="ecran">Ecran</p><p id="plat">Plat</p></a>
+                </div>
+
+                <div class="col-md-6">
+                    <nav class="navbar" id="navbar3">
+                        <a class="navbar-brand" href="{{ path('films') }}">Films</a>
+                        <a class="navbar-brand" href="{{ path('series') }}">Séries</a>
+                        <a class="navbar-brand" href="{{ path('jeuxvideo') }}">Jeux Vidéo</a>
+                        <a class="navbar-brand" href="{{ path('mangas') }}">Mangas</a>
+                        <a class="navbar-brand" href="{{ path('bdlivres') }}">Livres et BD</a>
+                    </nav>
+                </div>
+
+                <div class="col-md-3" id="social">
+                    <a href="https://www.youtube.fr/" className="fb-ic" target="_blank">
+                        <i class="fa fa-youtube fa-lg white-text mr-md-5 mr-3 fa-1x" id="youtube"> </i>
+                    </a>
+                    <a href="https://www.twitter.com/" className="fb-ic" target="_blank">
+                        <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-1x" id="twitter"> </i>
+                    </a>
+                    <a href="https://www.facebook.com/" className="fb-ic" target="_blank">
+                        <i class="fa fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-1x" id="facebook"> </i>
+                    </a>
+                </div>
+
+                <div class="col-md-9s">
+                    <nav class="navbar" id="navbar4">
+                        <a class="navbar-brand" href="">Nous contacter</a>
+                        <a class="navbar-brand" href="">Conditions d'utilisation</a>
+                        <a class="navbar-brand" href="">Infos légales</a>
+                        <a class="navbar-brand" href="">Vie privée et cookie</a>
+                        <a class="navbar-brand" href="">Partenariats</a>
+                    </nav>
+                </div>
+                <div class="col-md-12" id="copy">
+                © 2020 Copyright | EcranPlat All right reserved
+                </div>
+
+            </div>
+        </div>
+    </footer>
+{% endblock %}

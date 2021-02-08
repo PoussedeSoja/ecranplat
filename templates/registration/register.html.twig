@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <h1>Inscription</h1>
+
+    <div class="container">
+        <div class="row" id="rowregister">
+            <div class="col-md-12">
+                <form class="box" action="" method="POST">
+                    <h1 class="box-logo box-title"><a href="{{ path('accueil') }}"><img src="/image/logosite.png" class="img-fluid"></a></h1>
+                    <h1 class="box-title" id="titreconnexion">Inscription</h1>
+                    {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.nom, {
+                        label: 'Nom :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.prenom, {
+                        label: 'Prenom :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.pseudo, {
+                        label: 'Pseudo :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.adresse, {
+                        label: 'Adresse :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.codePostal, {
+                        label: 'Code Postal :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.ville, {
+                        label: 'Ville :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.pays, {
+                        label: 'Pays :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.email, {
+                        label: 'Email :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Mot de passe :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.image, {
+                        label: 'Image de profil :',
+                        'attr': {'class': 'box-input'},
+                    }) }} <br>
+                    {{ form_row(registrationForm.agreeTerms, {
+                        label: 'Accepter les termes :',
+                    }) }} <br>
+                    <button type="submit" class="box-button" id="boutoninscription">S'inscrire</button>
+                    {{ form_end(registrationForm) }} <br>
+
+                    <p class="box-register">Vous possédez déjà un compte ? <a href="{{ path('app_login') }}">Identifiez-vous ici</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}

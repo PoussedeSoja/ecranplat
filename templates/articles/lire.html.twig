@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lire l'article{% endblock %}
+
+{% block body %}
+<div class="container">
+    <header>
+        <section class="col-md-12" id="section">
+            <p class="titrearticle">{{ articles.titre }}</p>
+            <div class="col-md-12">
+            <p class="titreredac">{{ articles.auteur }}</p> <p class="titredate">| {{articles.date | date('d/m/y')}} à {{articles.date | date('h:i')}}</p>
+            </div>
+            <div class="col-md-12">
+            <hr id="hrarticle">
+            </div>
+            <div class="col-md-12">
+                <p class="titledetail"><img class="img-fluid" id="imagearticle" src="{{ asset('image/' ~articles.image) }}"></p>
+            </div>
+            <div class="col-md-12" id="contenuarticle">
+                <p class="entete">{{ articles.resume }}</p></br>
+                <p class="titledetail" id="contenuarticle">{{ articles.contenu | raw }}</p></br>
+                <p><a href="{{ path('accueil') }}"><button class="btn btn-primary" id="retourbutton">Retour</button></a> 
+            </div>
+        </section>
+    </header>
+<section class="col-md-12">
+    <div class="col-md-12">
+        <hr>
+    </div>
+<header>
+    <div class="col-md-12">
+        <h6 id="titreReponses">Commentaires({{ articles.commentaires|length }})</h6>
+        <hr id="hrcommentaire">
+    </div>
+</header>
+<div class="col-md-12">
+    {% for commentaire in articles.commentaires %} 
+        <p id="auteurarticle">{{ commentaire.pseudo }}</p>
+        <p>{{ commentaire.contenu }}</p>
+    <hr>
+    {% else %}
+        <p>Il n'y a pas encore de commentaire</p>
+    {% endfor %}
+</div>
+    
+</section>
+<section class="col-12" id="section3">
+<div class="col-md-6" id="sectioncomment">
+    <label for="" id="votre">Votre <span id="comment">commentaire</span><img src="/image/logosite2.png" class="img-fluid" alt="" id="logosite3"></label>
+    {{ form(commentForm) }}
+</div>
+</section>
+</div>
+
+{% endblock %}
+        

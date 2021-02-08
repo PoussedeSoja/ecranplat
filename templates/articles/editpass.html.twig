@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profil{% endblock %}
+
+{% block body %}
+<div class="container" id="containerprofil1">
+    <div class="row" id="row1">
+    </div>
+    <div class="row" id="row2">
+        <div class="col-md-6" id="informations">
+            <section>
+            {% for message in app.flashes('error') %} 
+                    <span id="error">{{message}}</span>
+                {% endfor %}
+                <form method="post"> 
+                <h1 id="titredetail2">Modification du mot de passe</h1>
+                <hr>
+                <div class="form-field">
+                    <label for="pass">Mot de passe</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+                <div class="form-field">
+                    <label for="pass2">Confirmer le mot de passe</label>
+                    <input type="password" id="password2" name="password2" class="form-control">
+                </div>
+                <button class="checkout-button24">Valider</button>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-6" id="informations2">
+            <section>
+                 <a href="{{ path('profil') }}"><button class="checkout-button25" id="boutoninscription">Retour</button></a>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

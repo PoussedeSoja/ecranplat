@@ -1,0 +1,7 @@
+easy_admin:
+    site_name: <b> Dashboard EcranPlat </b>
+
+    design:
+        # brand_colo: '000000'
+        form_theme:
+            - '@EasyAdmin/Form/bootstrap_4.html.twig'

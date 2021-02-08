@@ -1,0 +1,154 @@
+{% block body %}
+<body class="body">
+
+    <div class="container-fluid"><!--Début header-->
+        <div class="row" id="row1">
+            <div class="col-md-2">
+                <a href="{{ path('accueil') }}"><img src="{{asset('image/logosite.png')}}" class="img-fluid" alt="" id="logosite"></a>
+            </div>
+            <div class="col-md-8">
+                <h1 id="titresite">Ecran<span>Plat</span></h1>
+                <hr id="hrtitre">
+                <h6 id="soustitresite">La référence du cinéma et des séries tv !</h6>
+            </div>
+            <div class="col-md-2">
+                <nav class="navbar navbar-l bg-l" id="navbar1">
+                          <div class="nav-item dropdown">
+                            <a class="navbar-brand" data-toggle="dropdown" href="#"> {% if app.user %}<img id="logoabonne" src="{{asset('image/abonne.jpg')}}">{% endif %} {% if app.user %}<img class="img-fluid" id="imageprofil" src="{{ asset('image/' ~app.user.image) }}">{% else %}<i class="fa fa-user-circle fa-1x" id="logologin"></i>{% endif %}<i class="fa fa-chevron-down fa-1x" id="logologin"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                <a class="dropdown-item" href="{{ path('easyadmin') }}">Dashboard</a>
+                                {% endif %}
+                                {% if is_granted('ROLE_EDITOR') %}
+                                <a class="dropdown-item" href="{{ path('easyadmin') }}">Dashboard</a>
+                                {% endif %}
+                                {% if app.user %}
+                                <a class="dropdown-item" href="{{ path('profil') }}" id="seconnect">Mon compte</a>
+                                <a class="dropdown-item" href="{{ path('app_logout') }}" id="seconnect">Se déconnecter</a>
+                                {% else %}
+                                <a class="dropdown-item" href="{{ path('app_login') }}" id="seconnect">Se connecter</a>
+                                <a class="dropdown-item" href="{{ path('app_register') }}" id="seconnect">S'inscrire</a>
+                                {% endif %}
+                            </div>
+                            
+                </nav>
+            </div>
+            <div class="col-md-12">
+                <nav class="navbar-expand-lg navbar-light bg-l" id="navbar2">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                        <li class="nav-item active" id="navaccueil">
+                            <a class="navbar-brand" href="{{ path('accueil') }}" id="navaccueil2">Accueil <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item" id="navfilm">
+                            <a class="navbar-brand" href="{{ path('films') }}">Films</a><a class="fa fa-chevron-down fa-1x" href="" data-toggle="dropdown" id="logofilm" ></a>
+                                <ul class="dropdown-menu container" id="dropdownfilms">
+                                    <div class="row">
+                                        <div class="col-md-2" id="col2dropdownfilm">
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('filmsnews') }}" id="newsfilms">News</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('filmsdossiers') }}" id="dossierfilms">Dossiers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('filmscritiques') }}" id="critiquefilms">Critiques</a>
+                                            </li>
+                                        </div>
+                                        
+                                    </div>
+                                </ul>
+                        </li>
+                        <li class="nav-item" id="navserie">
+                            <a class="navbar-brand" href="{{ path('series') }}">Séries</a><a class="fa fa-chevron-down fa-1x" href="" data-toggle="dropdown" id="logoserie"></a>
+                            <ul class="dropdown-menu container" id="dropdownseries">
+                                    <div class="row">
+                                        <div class="col-md-2" id="col2dropdownseries">
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('seriesnews') }}" id="newsfilms">News</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('seriesdossiers') }}" id="dossierfilms">Dossiers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('seriescritiques') }}" id="critiquefilms">Critiques</a>
+                                            </li>
+                                        </div>
+                                       
+                                         
+                                    </div>
+                                </ul>
+                        </li>
+                        <li class="nav-item" id="navgame">
+                            <a class="navbar-brand" href="{{ path('jeuxvideo') }}">Jeux Vidéo</a><a class="fa fa-chevron-down fa-1x" href="" data-toggle="dropdown" id="logojeux"></a>
+                            <ul class="dropdown-menu container" id="dropdownseries">
+                                    <div class="row">
+                                        <div class="col-md-2" id="col2dropdownseries">
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('jeuxvideonews') }}" id="newsfilms">News</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('jeuxvideodossiers') }}" id="dossierfilms">Dossiers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('jeuxvideotests') }}" id="critiquefilms">Tests</a>
+                                            </li>
+                                        </div>
+                                       
+                                         
+                                    </div>
+                                </ul>
+                        </li>
+                        <li class="nav-item" id="navmangas">
+                            <a class="navbar-brand" href="{{ path('mangas') }}">Mangas</a><a class="fa fa-chevron-down fa-1x" href="" data-toggle="dropdown" id="logomanga"></a>
+                            <ul class="dropdown-menu container" id="dropdownseries">
+                                    <div class="row">
+                                        <div class="col-md-2" id="col2dropdownseries">
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('mangasnews') }}" id="newsfilms">News</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('mangasdossiers') }}" id="dossierfilms">Dossiers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('mangascritiques') }}" id="critiquefilms">Critiques</a>
+                                            </li>
+                                        </div>
+                                       
+                                         
+                                    </div>
+                                </ul>
+                        </li>
+                        <li class="nav-item" id="navbd">
+                            <a class="navbar-brand" href="{{ path('bdlivres') }}">Livres et BD</a><a class="fa fa-chevron-down fa-1x" href="" data-toggle="dropdown" id="logobd"></a>
+                            <ul class="dropdown-menu container" id="dropdownseries">
+                                    <div class="row">
+                                        <div class="col-md-2" id="col2dropdownseries">
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('bdlivresnews') }}" id="newsfilms">News</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('bdlivresdossiers') }}" id="dossierfilms">Dossiers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('bdlivrescritiques') }}" id="critiquefilms">Critiques</a>
+                                            </li>
+                                        </div>
+                                       
+                                         
+                                    </div>
+                                </ul>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <hr id="hr2">
+        </div>
+    </div><!--Fin header-->
+{% endblock %}
